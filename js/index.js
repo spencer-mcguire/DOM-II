@@ -6,6 +6,19 @@ heading.addEventListener("wheel", () => {
 	heading.style.color = "darkredppp";
 });
 
+const stopLink = document.querySelector(".main-navigation NAV");
+stopLink.addEventListener("click", e => {
+	console.log("stoped link");
+	e.preventDefault();
+});
+
+const newNav = document.querySelectorAll("nav a");
+newNav.forEach(e => {
+    e.addEventListener('focus', (e)=>{
+        e.target.style.color= 'darkred'
+    })
+})
+console.log(newNav)
 // Header Img
 const headImg = document.querySelector(".intro img");
 headImg.addEventListener("mouseenter", () => {
@@ -31,12 +44,13 @@ window.addEventListener("keyup", () => {
 	body.style.color = "black";
 	body.style.filter = "none";
 });
-window.addEventListener('load', () => [
-    console.image('https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80')
-])
+window.addEventListener("load", () => [
+	console.image(
+		"https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80"
+	)
+]);
 
 var snd = new Audio("scary.mp3");
-
 let imgDrag = document.querySelectorAll("img");
 imgDrag.forEach(e => {
 	e.addEventListener("drag", () => {
@@ -46,10 +60,7 @@ imgDrag.forEach(e => {
 
 imgDrag.forEach(e => {
 	e.addEventListener("drop", () => {
-        snd.pause();
-        snd.currentTime = 0;
+		snd.pause();
+		snd.currentTime = 0;
 	});
 });
-
-
-
