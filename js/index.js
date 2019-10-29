@@ -16,7 +16,6 @@ const newNav = document.querySelectorAll("nav a");
 newNav.forEach(e => {
 	e.addEventListener("focus", e => {
         e.target.style.color = "darkred";
-        e.stopPropagation();
 	});
 });
 
@@ -101,9 +100,21 @@ const button = document.querySelectorAll(".destination .btn");
 button.forEach(e => {
 	e.addEventListener("dblclick", () => {
         e.textContent = "yeah, NO";
-        e.stopPropagation();
 	});
 });
+
+let bod = document.querySelector('body')
+bod.addEventListener('click', ()=>{
+	bod.style.backgroundColor = 'rgba(0,0,0,0.3)'
+})
+
+let p = document.querySelectorAll('div')
+p.forEach(e => {
+	e.addEventListener('click', ()=>{
+		e.style.color = 'green'
+		event.stopPropagation()
+	})
+})
 
 
 
