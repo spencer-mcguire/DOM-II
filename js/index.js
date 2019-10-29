@@ -14,10 +14,10 @@ stopLink.addEventListener("click", e => {
 
 const newNav = document.querySelectorAll("nav a");
 newNav.forEach(e => {
-    e.addEventListener('focus', (e)=>{
-        e.target.style.color= 'darkred'
-    })
-})
+	e.addEventListener("focus", e => {
+		e.target.style.color = "darkred";
+	});
+});
 
 // Header Img
 const headImg = document.querySelector(".intro img");
@@ -50,21 +50,21 @@ window.addEventListener("load", () => [
 	)
 ]);
 
-const headTitle =document.querySelector('.intro h2')
-headTitle.addEventListener('click', () => {
-    headTitle.textContent = 'Its a nice night for a haunting!'
-    console.log(headTitle)
-})
+const headTitle = document.querySelector(".intro h2");
+headTitle.addEventListener("click", () => {
+	headTitle.textContent = "Its a nice night for a haunting!";
+	console.log(headTitle);
+});
 
 // Select the contents of a text field
 function mySelectFunction() {
-    document.querySelector(".intro").select();
-  }
-  
-  // Alert some text when the text in the text field has been selected
-  function myAlertFunction() {
-    alert("You selected some text!");
-  }
+	document.querySelector(".intro").select();
+}
+
+// Alert some text when the text in the text field has been selected
+function myAlertFunction() {
+	alert("You selected some text!");
+}
 
 var snd = new Audio("scary.mp3");
 let imgDrag = document.querySelectorAll("img");
@@ -81,26 +81,33 @@ imgDrag.forEach(e => {
 	});
 });
 
-let resize = document.querySelector('body')
-window.addEventListener('resize', () =>{
-    resize.textContent='IM SO READY FOR HALLOWEEN!'
-    resize.style.fontSize = '9rem'
-    resize.style.textAlign = 'center'
-    resize.style.color = 'darkred'
-    resize.style.backgroundColor = 'black'
-})
+let resize = document.querySelector("body");
+window.addEventListener("resize", () => {
+	resize.textContent = "IM SO READY FOR HALLOWEEN!";
+	resize.style.fontSize = "9rem";
+	resize.style.textAlign = "center";
+	resize.style.color = "darkred";
+	resize.style.backgroundColor = "black";
+});
 
-// const scroll = document.querySelector('.content-section img')
-// scroll.addEventListener('scroll', ()=>{
-//     scroll.src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
-// })
-// console.log(scroll)
-window.addEventListener('scroll', () => {
-    let dolls = document.querySelector('.content-section img')
-    dolls.src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
-  });
+window.addEventListener("scroll", () => {
+	let dolls = document.querySelector(".content-section img");
+	dolls.src =
+		"https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80";
+});
 
-const button = document.querySelector('.destination .btn')
-button.addEventListener('dblclick', () => {
-    button.textContent = 'yeah, NO'
-})
+const button = document.querySelectorAll(".destination .btn");
+button.forEach(e => {
+	e.addEventListener("dblclick", () => {
+		e.textContent = "yeah, NO";
+	});
+});
+
+function logSelection(event) {
+    const log = document.querySelector('.intro');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    console.log(`You selected: ${selection}`)
+  }
+  
+  const input = document.querySelector('.intro h2');
+  input.addEventListener('select', logSelection);
