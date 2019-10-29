@@ -15,7 +15,8 @@ stopLink.addEventListener("click", e => {
 const newNav = document.querySelectorAll("nav a");
 newNav.forEach(e => {
 	e.addEventListener("focus", e => {
-		e.target.style.color = "darkred";
+        e.target.style.color = "darkred";
+        e.stopPropagation();
 	});
 });
 
@@ -99,15 +100,18 @@ window.addEventListener("scroll", () => {
 const button = document.querySelectorAll(".destination .btn");
 button.forEach(e => {
 	e.addEventListener("dblclick", () => {
-		e.textContent = "yeah, NO";
+        e.textContent = "yeah, NO";
+        e.stopPropagation();
 	});
 });
 
-function logSelection(event) {
-    const log = document.querySelector('.intro');
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-    console.log(`You selected: ${selection}`)
-  }
+
+
+// function logSelection(event) {
+//     const log = document.querySelector('.intro');
+//     const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+//     console.log(`You selected: ${selection}`)
+//   }
   
-  const input = document.querySelector('.intro h2');
-  input.addEventListener('select', logSelection);
+//   const input = document.querySelector('.intro h2');
+//   input.addEventListener('select', logSelection);
