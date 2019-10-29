@@ -18,7 +18,7 @@ newNav.forEach(e => {
         e.target.style.color= 'darkred'
     })
 })
-console.log(newNav)
+
 // Header Img
 const headImg = document.querySelector(".intro img");
 headImg.addEventListener("mouseenter", () => {
@@ -59,8 +59,30 @@ imgDrag.forEach(e => {
 });
 
 imgDrag.forEach(e => {
-	e.addEventListener("drop", () => {
+	e.addEventListener("dragend", () => {
 		snd.pause();
 		snd.currentTime = 0;
 	});
 });
+
+let resize = document.querySelector('body')
+window.addEventListener('resize', () =>{
+    resize.textContent='IM SO READY FOR HALLOWEEN!'
+    resize.style.fontSize = '9rem'
+    resize.style.textAlign = 'center'
+    resize.style.color = 'darkred'
+    resize.style.backgroundColor = 'black'
+})
+
+// const scroll = document.querySelector('.content-section img')
+// scroll.addEventListener('scroll', ()=>{
+//     scroll.src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+// })
+// console.log(scroll)
+window.addEventListener('scroll', function() {
+    document.querySelector('.content-section img').src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+  });
+
+  window.addEventListener('scroll', function() {
+    document.querySelector('.content-section img').src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+  });
