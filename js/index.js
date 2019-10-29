@@ -50,6 +50,22 @@ window.addEventListener("load", () => [
 	)
 ]);
 
+const headTitle =document.querySelector('.intro h2')
+headTitle.addEventListener('click', () => {
+    headTitle.textContent = 'Its a nice night for a haunting!'
+    console.log(headTitle)
+})
+
+// Select the contents of a text field
+function mySelectFunction() {
+    document.querySelector(".intro").select();
+  }
+  
+  // Alert some text when the text in the text field has been selected
+  function myAlertFunction() {
+    alert("You selected some text!");
+  }
+
 var snd = new Audio("scary.mp3");
 let imgDrag = document.querySelectorAll("img");
 imgDrag.forEach(e => {
@@ -79,10 +95,12 @@ window.addEventListener('resize', () =>{
 //     scroll.src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
 // })
 // console.log(scroll)
-window.addEventListener('scroll', function() {
-    document.querySelector('.content-section img').src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
+window.addEventListener('scroll', () => {
+    let dolls = document.querySelector('.content-section img')
+    dolls.src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
   });
 
-  window.addEventListener('scroll', function() {
-    document.querySelector('.content-section img').src = 'https://images.unsplash.com/photo-1522027979387-9e9f5c44c98d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80'
-  });
+const button = document.querySelector('.destination .btn')
+button.addEventListener('dblclick', () => {
+    button.textContent = 'yeah, NO'
+})
